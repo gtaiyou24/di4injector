@@ -33,8 +33,8 @@ class JapaneseGreetingService(GreetingService):
 DIContainer.instance().register(DI.of(
     GreetingService,  # Abstract class 
     {  # inject
-        "JP": JapaneseGreetingService,  # ENV=JP  
-        "EN": EnglishGreetingService    # ENV=EN
+        "JP": JapaneseGreetingService,  # DI_PROFILE_ACTIVES=JP,...  
+        "EN": EnglishGreetingService    # DI_PROFILE_ACTIVES=EN,...
     }, 
     EnglishGreetingService  # Default
 ))
