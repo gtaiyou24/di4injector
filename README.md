@@ -42,3 +42,12 @@ DIContainer.instance().register(DI.of(
 greeting_service = DIContainer.instance().resolve(GreetingService)
 greeting_service.greeting()
 ```
+
+## For Developer
+
+<details><summary>run test</summary>
+
+```shell
+pytest -v ./tests
+```
+</details>
