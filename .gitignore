@@ -1,0 +1,13 @@
+# setup
+build
+*/*.egg-info
+dist
+.eggs
+
+# Python
+__pycache__
+*.pyc
+
+# PyCharm
+.idea
+venv
