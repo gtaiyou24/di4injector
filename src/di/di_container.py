@@ -19,8 +19,9 @@ class DIContainer:
             cls.__shared = DIContainer()
         return cls.__shared
 
-    def register(self, di: DI):
-        self.__injector.binder.install(di)
+    def register(self, *di: DI) -> None:
+        for e in di:
+            self.__injector.binder.install(e)
 
     def resolve(self, interface: Type[T]) -> T:
         return self.__injector.get(interface)
