@@ -30,14 +30,16 @@ class JapaneseGreetingService(GreetingService):
         return 'こんにちは'
 
 
-DIContainer.instance().register(DI.of(
+di = DI.of(
     GreetingService,  # Abstract class 
     {  # inject
         "JP": JapaneseGreetingService,  # DI_PROFILE_ACTIVES=JP,...  
         "EN": EnglishGreetingService    # DI_PROFILE_ACTIVES=EN,...
     }, 
     EnglishGreetingService  # Default
-))
+)
+
+DIContainer.instance().register(di)
 
 greeting_service = DIContainer.instance().resolve(GreetingService)
 greeting_service.greeting()
